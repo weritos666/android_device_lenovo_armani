@@ -61,17 +61,20 @@ BOARD_USES_ADRENO_200 := true
 
 # Inline kernel building
 #TARGET_NO_KERNEL := true
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/zImage:kernel
+#PRODUCT_COPY_FILES += \
+#	$(LOCAL_PATH)/zImage:kernel
+# Inline kernel building
+TARGET_KERNEL_SOURCE := kernel/lenovo/armani
+TARGET_KERNEL_CONFIG := cyanogenmod_armani_defconfig
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USES_UNCOMPRESSED_KERNEL := false
 
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom loglevel=1 vmalloc=200M androidboot.selinux=permissive 
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom loglevel=1 vmalloc=200M
 
 ARCH_ARM_HAVE_TLS_REGISTER := true
-BOARD_EGL_CFG := device/dns/s4503/config/egl.cfg
+BOARD_EGL_CFG := device/lenovo/armani/config/egl.cfg
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 465568000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 2920577761
