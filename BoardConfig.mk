@@ -65,7 +65,7 @@ BOARD_USES_ADRENO_200 := true
 #	$(LOCAL_PATH)/zImage:kernel
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/lenovo/armani
-TARGET_KERNEL_CONFIG := cyanogenmod_armani_defconfig
+TARGET_KERNEL_CONFIG := armani_defconfig
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -175,7 +175,7 @@ USE_CAMERA_STUB :=false
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm7x27a
 
 # Webkit
-PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
+#PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
 TARGET_FORCE_CPU_UPLOAD := true
 
 DISABLE_DEXPREOPT := true
@@ -203,6 +203,7 @@ WIFI_EXT_MODULE_NAME := "cfg80211"
 WIFI_DRIVER_FW_PATH_PARAM := "/data/misc/wifi/fwpath"
 
 # Recovery
+TARGET_NO_RECOVERY := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_INITRC := device/lenovo/armani/recovery/init.rc
 TARGET_RECOVERY_FSTAB :=device/lenovo/armani/recovery/recovery.fstab
