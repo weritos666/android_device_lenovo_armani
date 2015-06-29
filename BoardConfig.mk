@@ -65,7 +65,7 @@ BOARD_USES_ADRENO_200 := true
 #	$(LOCAL_PATH)/zImage:kernel
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/lenovo/armani
-TARGET_KERNEL_CONFIG := armani_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_armani_defconfig
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -99,7 +99,7 @@ BOARD_HAVE_QCOM_FM := true
 #COMMON_GLOBAL_CFLAGS += -DQCOM_FM_ENABLED
 
 # Audio
-TARGET_QCOM_AUDIO_VARIANT := caf
+TARGET_QCOM_AUDIO_VARIANT := legacy
 TARGET_PROVIDES_LIBAUDIO := true
 BOARD_QCOM_VOIP_ENABLED := true
 BOARD_USES_LEGACY_ALSA_AUDIO := true
@@ -169,7 +169,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # Camera
 COMMON_GLOBAL_CFLAGS += -DMR0_CAMERA_BLOB -DNEEDS_VECTORIMPL_SYMBOLS
-USE_DEVICE_SPECIFIC_CAMERA := true
+USE_DEVICE_SPECIFIC_CAMERA := false
 USE_CAMERA_STUB :=false
 
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm7x27a
@@ -203,7 +203,6 @@ WIFI_EXT_MODULE_NAME := "cfg80211"
 WIFI_DRIVER_FW_PATH_PARAM := "/data/misc/wifi/fwpath"
 
 # Recovery
-TARGET_NO_RECOVERY := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_INITRC := device/lenovo/armani/recovery/init.rc
 TARGET_RECOVERY_FSTAB :=device/lenovo/armani/recovery/recovery.fstab
@@ -223,6 +222,3 @@ BOARD_USE_CUSTOM_RECOVERY_FONT:= \"roboto_10x18.h\"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 255
-
-# CoDec Enhancements
-ENABLE_AV_ENHANCEMENTS := false

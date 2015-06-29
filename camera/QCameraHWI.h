@@ -37,7 +37,7 @@
 #include <hardware/camera.h>
 #include <hardware/power.h>
 #include <gralloc_priv.h>
-#include <QComOMXMetadata.h>
+//#include <QComOMXMetadata.h>
 
 extern "C" {
 #include <linux/android_pmem.h>

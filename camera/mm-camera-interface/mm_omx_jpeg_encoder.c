@@ -30,10 +30,10 @@
 #include <stdbool.h>
 #include <fcntl.h>
 #include <dlfcn.h>
-#include "OMX_Types.h"
-#include "OMX_Index.h"
-#include "OMX_Core.h"
-#include "OMX_Component.h"
+//#include "OMX_Types.h"
+//#include "OMX_Index.h"
+//#include "OMX_Core.h"
+//#include "OMX_Component.h"
 #include "omx_debug.h"
 #include "omx_jpeg_ext.h"
 #include "mm_omx_jpeg_encoder.h"

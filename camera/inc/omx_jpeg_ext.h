@@ -30,7 +30,7 @@
 #ifndef OMX_JPEG_EXT_H_
 #define OMX_JPEG_EXT_H_
 
-#include <OMX_Image.h>
+//#include <OMX_Image.h>
 #include "omx_jpeg_common.h"
 #include "QCamera_Intf.h"
 
