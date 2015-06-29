@@ -19,6 +19,12 @@
 # to only building on ARM if they include assembly. Individual makefiles
 # are responsible for having their own logic, for fine-grained control.
 
+# FIXME : TEMPORARY HACK FOR LIBGENLOCK
+# FACK YEAH!!
+$(shell mkdir -p $OUT/obj/lib)
+$(shell cp ~/libgenlock.so $OUT/obj/lib)
+$(shell cp ~/libqdutils.so $OUT/obj/lib)
+
 ifeq ($(TARGET_DEVICE),armani)
 
 LOCAL_PATH := $(call my-dir)

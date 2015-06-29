@@ -96,7 +96,7 @@ BOARD_DATA_FILESYSTEM_OPTIONS := rw
 
 # FM
 BOARD_HAVE_QCOM_FM := true
-#COMMON_GLOBAL_CFLAGS += -DQCOM_FM_ENABLED
+COMMON_GLOBAL_CFLAGS += -DQCOM_FM_ENABLED
 
 # Audio
 TARGET_QCOM_AUDIO_VARIANT := legacy
@@ -115,19 +115,25 @@ TARGET_ARCH_LOWMEM := true
 # Hardware tunables framework
 BOARD_HARDWARE_CLASS := device/lenovo/armani/cmhw/
 
-# Display
+
+# Display                                                                                 │··························································
+USE_OPENGL_RENDERER := true                                                               │··························································
+TARGET_QCOM_DISPLAY_VARIANT := legacy                                                     │··························································
+BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true                                                │··························································
+BOARD_EGL_WORKAROUND_BUG_10194508 := true                                                 │··························································
+BOARD_USE_MHEAP_SCREENSHOT := true
+
+#TARGET_USES_GENLOCK := true
 BOARD_USES_QCOM_HARDWARE := true
-BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true
-TARGET_QCOM_DISPLAY_VARIANT := legacy
-USE_OPENGL_RENDERER := true
 TARGET_USES_ION := true
 TARGET_USES_QCOM_BSP := true
+COMMON_GLOBAL_CFLAGS += -DQCOM_FM_ENABLED
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 BOARD_USE_MHEAP_SCREENSHOT := true
 HWUI_COMPILE_FOR_PERF := true
 
 # Add QC Video Enhancements flag
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := false
 
 # SEPOLICY
 BOARD_SEPOLICY_DIRS := \
@@ -143,9 +149,9 @@ BOARD_EGL_WORKAROUND_BUG_10194508 := true
 BOARD_EGL_CFG := device/lenovo/armani/config/egl.cfg
 
 # Media
-TARGET_QCOM_MEDIA_VARIANT := caf-new
-COMMON_GLOBAL_CFLAGS += -DLPA_DEFAULT_BUFFER_SIZE=480
-TARGET_QCOM_LEGACY_MMPARSER := true
+TARGET_QCOM_MEDIA_VARIANT := caf
+#COMMON_GLOBAL_CFLAGS += -DLPA_DEFAULT_BUFFER_SIZE=480
+#TARGET_QCOM_LEGACY_MMPARSER := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_NO_SECURE_PLAYBACK
 
 # Vold
