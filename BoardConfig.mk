@@ -25,8 +25,6 @@
 
 LOCAL_PATH := device/lenovo/armani
 
--include vendor/huawei/msm7x27a-common/BoardConfigVendor.mk
-
 TARGET_SPECIFIC_HEADER_PATH := device/lenovo/armani/include
 
 # cflags
@@ -151,7 +149,7 @@ BOARD_EGL_WORKAROUND_BUG_10194508 := true
 BOARD_EGL_CFG := device/lenovo/armani/config/egl.cfg
 
 # Media
-TARGET_QCOM_MEDIA_VARIANT := caf
+TARGET_QCOM_MEDIA_VARIANT := caf-new
 COMMON_GLOBAL_CFLAGS += -DLPA_DEFAULT_BUFFER_SIZE=480
 TARGET_QCOM_LEGACY_MMPARSER := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_NO_SECURE_PLAYBACK
