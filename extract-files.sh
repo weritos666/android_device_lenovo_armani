@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export VENDOR=nokia
-export DEVICE=normandy
+export VENDOR=lenovo
+export DEVICE=armani
 
 if [ $# -eq 1 ]; then
     COPY_FROM=$1
