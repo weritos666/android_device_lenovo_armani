@@ -1,0 +1,38 @@
+From ff89de451607beab46e085aaf9f8474ae2a7bcfa Mon Sep 17 00:00:00 2001
+From: OngisnadeMod <ongisnademod@gmail.com>
+Date: Fri, 29 Aug 2014 18:32:55 +0700
+Subject: [PATCH] TWRP : Fix compile error
+
+---
+ minui/Android.mk     | 2 +-
+ minuitwrp/Android.mk | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/minui/Android.mk b/minui/Android.mk
+index e8c1b9c..43ccdc2 100644
+--- a/minui/Android.mk
++++ b/minui/Android.mk
+@@ -1,7 +1,7 @@
+ LOCAL_PATH := $(call my-dir)
+ include $(CLEAR_VARS)
+ 
+-LOCAL_SRC_FILES := graphics_overlay.c events.c resources.c
++LOCAL_SRC_FILES := events.c resources.c
+ ifneq ($(BOARD_CUSTOM_GRAPHICS),)
+   LOCAL_SRC_FILES += $(BOARD_CUSTOM_GRAPHICS)
+ else
+diff --git a/minuitwrp/Android.mk b/minuitwrp/Android.mk
+index fad451f..81d378f 100644
+--- a/minuitwrp/Android.mk
++++ b/minuitwrp/Android.mk
+@@ -2,7 +2,7 @@ LOCAL_PATH := $(call my-dir)
+ 
+ include $(CLEAR_VARS)
+ 
+-LOCAL_SRC_FILES := events.c resources.c graphics_overlay.c graphics_utils.c
++LOCAL_SRC_FILES := events.c resources.c graphics_utils.c
+ 
+ ifneq ($(TW_BOARD_CUSTOM_GRAPHICS),)
+     LOCAL_SRC_FILES += $(TW_BOARD_CUSTOM_GRAPHICS)
+-- 
+1.9.1
