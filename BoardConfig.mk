@@ -47,7 +47,7 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a5
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_BOARD_PLATFORM := msm7x27a
-TARGET_BOOTLOADER_BOARD_NAME := 7х27
+TARGET_BOOTLOADER_BOARD_NAME := 7x27
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_CORTEX_CACHE_LINE_32 := true
@@ -65,7 +65,7 @@ BOARD_USES_ADRENO_200 := true
 #	$(LOCAL_PATH)/zImage:kernel
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/lenovo/armani
-TARGET_KERNEL_CONFIG := cyanogenmod_armani_defconfig
+TARGET_KERNEL_CONFIG := armani_defconfig
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -110,18 +110,19 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lenovo/armani/bluetooth
 
 # Dalvik
-TARGET_ARCH_LOWMEM := true
+TARGET_ARCH_LOWMEM := false
 
 # Hardware tunables framework
 BOARD_HARDWARE_CLASS := device/lenovo/armani/cmhw/
 
 
 # Display                                                                                 │··························································
-USE_OPENGL_RENDERER := true                                                               │··························································
-TARGET_QCOM_DISPLAY_VARIANT := legacy                                                     │··························································
-BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true                                                │··························································
-BOARD_EGL_WORKAROUND_BUG_10194508 := true                                                 │··························································
+USE_OPENGL_RENDERER := true
+TARGET_QCOM_DISPLAY_VARIANT := legacy        
+BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true                                           
+BOARD_EGL_WORKAROUND_BUG_10194508 := true                                   
 BOARD_USE_MHEAP_SCREENSHOT := true
+TARGET_DOESNT_USE_FENCE_SYNC := true
 
 #TARGET_USES_GENLOCK := true
 BOARD_USES_QCOM_HARDWARE := true
@@ -133,7 +134,8 @@ BOARD_USE_MHEAP_SCREENSHOT := true
 HWUI_COMPILE_FOR_PERF := true
 
 # Add QC Video Enhancements flag
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := false
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+TARGET_ENABLE_AV_ENHANCEMENTS := false
 
 # SEPOLICY
 BOARD_SEPOLICY_DIRS := \
@@ -150,8 +152,8 @@ BOARD_EGL_CFG := device/lenovo/armani/config/egl.cfg
 
 # Media
 TARGET_QCOM_MEDIA_VARIANT := caf
-#COMMON_GLOBAL_CFLAGS += -DLPA_DEFAULT_BUFFER_SIZE=480
-#TARGET_QCOM_LEGACY_MMPARSER := true
+COMMON_GLOBAL_CFLAGS += -DLPA_DEFAULT_BUFFER_SIZE=480
+TARGET_QCOM_LEGACY_MMPARSER := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_NO_SECURE_PLAYBACK
 
 # Vold
@@ -172,7 +174,6 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 TARGET_PROVIDES_LIBLIGHT := true
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
-
 # Camera
 COMMON_GLOBAL_CFLAGS += -DMR0_CAMERA_BLOB -DNEEDS_VECTORIMPL_SYMBOLS
 USE_DEVICE_SPECIFIC_CAMERA := false
@@ -228,3 +229,6 @@ BOARD_USE_CUSTOM_RECOVERY_FONT:= \"roboto_10x18.h\"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 255
+
+# FIXME : TEMP HACK FOR CHARGER
+TARGET_NO_OFF_CHARGE := true
