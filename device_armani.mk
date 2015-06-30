@@ -307,7 +307,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.use_data_netmgrd=true \
   persist.data_netmgrd_nint=16 \
-  persist.radio.apm_sim_not_pwdn=1  
+  persist.radio.apm_sim_not_pwdn=1 \
+  ro.sf.hwrotation=0
+
 
 $(call inherit-product, vendor/lenovo/armani/armani-vendor.mk)
 $(call inherit-product, vendor/lenovo/armani/armani-vendor-blobs.mk)
