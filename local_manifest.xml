@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <!--<remove-project name="CyanogenMod/android_bootable_recovery" />
+    <project path="bootable/recovery" name="omnirom/android_bootable_recovery" revision="android-5.1" remote="github" />
+    <remove-project name="CyanogenMod/android_frameworks_av" />-->
+    <project path="bootable/recovery-philz" name="dianlujitao/philz_touch_cwm6_cn" revision="cm-11.0" />
+    <project path="external/webkit" name="c8813q-dev/android_external_webkit" revision="kitkat" />
+    <project path="hardware/atheros/wlan" name="c8813q-dev/android_hardware_atheros_wlan" revision="cm-11.0" />
+    <project path="hardware/atheros/wifi/ath6kl-huawei" name="c8813q-dev/android_hardware_atheros_wifi_ath6kl-huawei" revision="master" />
+    <project path="hardware/qcom/display-legacy" name="c8813q-dev/android_hardware_qcom_display-legacy" revision="cm-11.0" />
+    <project path="hardware/qcom/media-legacy" name="c8813q-dev/android_hardware_qcom_media-legacy" revision="cm-11.0" />
+    <project path="device/lenovo/armani" name="Anonim47/android_device_lenovo_armani" revision="cm-11.0" remote="github" />
+    <project path="device/qcom/common" name="CyanogenMod/android_device_qcom_common" revision="cm-11.0" remote="github"/>
+    <project path="kernel/lenovo/armani" name="Anonim47/android_kernel_lenovo_msm8x25q" revision="jellybean" remote="github" />
+	<project path="vendor/lenovo/armani" name="A706-Dev/android_vendor_lenovo" revision="kitkat" remote="github" />
+    <!--<project path="frameworks/av" name="legaCyMod/android_frameworks_av" revision="cm-11.0" />-->
+</manifest>
