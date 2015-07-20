@@ -18,9 +18,9 @@ $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-LOCAL_PATH := device/dns/s4503
+LOCAL_PATH := device/lenovo/armani
 
-DEVICE_PACKAGE_OVERLAYS := device/dns/s4503/overlay
+DEVICE_PACKAGE_OVERLAYS := device/lenovo/armani/overlay
 
 PRODUCT_LOCALES := en_US
 PRODUCT_LOCALES += hdpi
@@ -62,10 +62,10 @@ PRODUCT_COPY_FILES += \
 
 # Files needed for recovery image
 PRODUCT_COPY_FILES += \
-device/dns/s4503/recovery/sbin/rmt_storage_recovery:/recovery/root/sbin/rmt_storage_recovery \
-device/dns/s4503/recovery/sbin/rmt_oeminfo_recovery:/recovery/root/sbin/rmt_oeminfo_recovery \
-device/dns/s4503/recovery/sbin/linker:/recovery/root/sbin/linker \
-device/dns/s4503/recovery/sbin/charge.sh:/recovery/root/sbin/charge.sh 
+device/lenovo/armani/recovery/sbin/rmt_storage_recovery:/recovery/root/sbin/rmt_storage_recovery \
+device/lenovo/armani/recovery/sbin/rmt_oeminfo_recovery:/recovery/root/sbin/rmt_oeminfo_recovery \
+device/lenovo/armani/recovery/sbin/linker:/recovery/root/sbin/linker \
+device/lenovo/armani/recovery/sbin/charge.sh:/recovery/root/sbin/charge.sh 
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -286,8 +286,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
   persist.data_netmgrd_nint=16 \
   persist.radio.apm_sim_not_pwdn=1  
 
-$(call inherit-product, vendor/dns_S4503/s4503/s4503-vendor.mk)
+$(call inherit-product, vendor/lenovo/armani_row/armani_row-vendor.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_MANUFACTURER := DNS
-PRODUCT_BRAND := dns
+PRODUCT_MANUFACTURER := qcom
+PRODUCT_BRAND := LENOVO

@@ -26,11 +26,11 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from xt1058 device
-$(call inherit-product, device/dns/s4503/device_dns.mk)
+$(call inherit-product, device/lenovo/armani/device_armani.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := s4503
-PRODUCT_NAME := full_dns
-PRODUCT_BRAND := dns
-PRODUCT_MODEL := DNS S-4503
-PRODUCT_MANUFACTURER := dns
+PRODUCT_DEVICE := armani
+PRODUCT_NAME := full_armani
+PRODUCT_BRAND := LENOVO
+PRODUCT_MODEL := A706_ROW
+PRODUCT_MANUFACTURER := qcom

@@ -23,7 +23,7 @@
 
 # inherit from the proprietary version
 
-LOCAL_PATH := device/dns/s4503
+LOCAL_PATH := device/lenovo/armani
 
 -include vendor/huawei/msm7x27a-common/BoardConfigVendor.mk
 
@@ -54,7 +54,7 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a5
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_BOARD_PLATFORM := msm7x27a
-TARGET_BOOTLOADER_BOARD_NAME := 7х27
+TARGET_BOOTLOADER_BOARD_NAME := msm7x27a
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_CORTEX_CACHE_LINE_32 := true
@@ -68,8 +68,11 @@ BOARD_USES_ADRENO_200 := true
 
 # Inline kernel building
 #TARGET_NO_KERNEL := true
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/zImage:kernel
+#PRODUCT_COPY_FILES += \
+#	$(LOCAL_PATH)/zImage:kernel
+
+TARGET_KERNEL_SOURCE := kernel/lenovo/armani
+TARGET_KERNEL_CONFIG := armani_defconfig
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -78,23 +81,30 @@ TARGET_USES_UNCOMPRESSED_KERNEL := false
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom loglevel=1 vmalloc=200M 
 
 ARCH_ARM_HAVE_TLS_REGISTER := true
-BOARD_EGL_CFG := device/dns/s4503/config/egl.cfg
+BOARD_EGL_CFG := device/lenovo/armani/config/egl.cfg
 
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 465568000
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 2920577761
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
-BOARD_CACHEIMAGE_PARTITION_SIZE := 41943040
-BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
+#BOARD_SYSTEMIMAGE_PARTITION_SIZE := 465568000
+#BOARD_USERDATAIMAGE_PARTITION_SIZE := 2920577761
+#BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
+#BOARD_CACHEIMAGE_PARTITION_SIZE := 41943040
+#BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 #TARGET_NO_RECOVERY := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
-BOARD_CACHE_DEVICE := /dev/block/mmcblk0p15
+BOARD_BOOTIMAGE_PARTITION_SIZE := 13901824
+BOARD_CACHEIMAGE_PARTITION_SIZE := 125829120
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 13901824
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 996147200
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 982515712
+BOARD_FLASH_BLOCK_SIZE := 131072
+
+BOARD_CACHE_DEVICE := /dev/block/mmcblk0p18
 BOARD_CACHE_FILESYSTEM := ext4
 BOARD_CACHE_FILESYSTEM_OPTIONS := rw
-BOARD_SYSTEM_DEVICE := /dev/block/mmcblk0p12
+BOARD_SYSTEM_DEVICE := /dev/block/mmcblk0p17
 BOARD_SYSTEM_FILESYSTEM := ext4
 BOARD_SYSTEM_FILESYSTEM_OPTIONS := rw
-BOARD_DATA_DEVICE := /dev/block/mmcblk0p13
+BOARD_DATA_DEVICE := /dev/block/mmcblk0p21
 BOARD_DATA_FILESYSTEM := ext4
 BOARD_DATA_FILESYSTEM_OPTIONS := rw
 
@@ -104,17 +114,17 @@ TARGET_HAS_QACT := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/dns/s4503/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lenovo/armani/bluetooth
 
 # Dalvik
-TARGET_ARCH_LOWMEM := true
+TARGET_ARCH_LOWMEM := flase
 
 # Hardware tunables framework
-BOARD_HARDWARE_CLASS := device/dns/s4503/cmhw/
+BOARD_HARDWARE_CLASS := device/lenovo/armani/cmhw/
 
 # Display
 BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true
-BOARD_EGL_CFG := device/dns/s4503/config/egl.cfg
+BOARD_EGL_CFG := device/lenovo/armani/config/egl.cfg
 TARGET_QCOM_DISPLAY_VARIANT := legacy
 USE_OPENGL_RENDERER := true
 
@@ -123,7 +133,7 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # SEPOLICY
 BOARD_SEPOLICY_DIRS := \
-       device/dns/s4503/sepolicy
+       device/lenovo/armani/sepolicy
 
 BOARD_SEPOLICY_UNION := \
        device.te \
@@ -133,7 +143,7 @@ BOARD_SEPOLICY_UNION := \
 TARGET_QCOM_MEDIA_VARIANT := caf
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := s4503,s4503_t,msm8625_i6,msm8625_d9
+TARGET_OTA_ASSERT_DEVICE := armani,armani_row,A706
 
 # Vold
 BOARD_VOLD_MAX_PARTITIONS := 19
@@ -155,7 +165,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 # Camera
 COMMON_GLOBAL_CFLAGS += -DMR0_CAMERA_BLOB
 USE_DEVICE_SPECIFIC_CAMERA := true
-USE_CAMERA_STUB :=false
+USE_CAMERA_STUB := true
 
 # Web Rendering
 ENABLE_WEBGL := true
@@ -164,9 +174,9 @@ TARGET_FORCE_CPU_UPLOAD := true
 DISABLE_DEXPREOPT := true
 
 # RIL
-BOARD_RIL_CLASS := ../../../device/dns/s4503/ril/
+BOARD_RIL_CLASS := ../../../device/lenovo/armani/ril/
 
-DEVICE_RESOLUTION := 940x560
+DEVICE_RESOLUTION := 854x480
 
 # Wi-Fi
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
@@ -186,9 +196,9 @@ WIFI_EXT_MODULE_NAME := "cfg80211"
 WIFI_DRIVER_FW_PATH_PARAM := "/data/misc/wifi/fwpath"
 
 # Recovery
-BOARD_CUSTOM_GRAPHICS := ../../../device/dns/s4503/recovery/graphics.c
-TARGET_RECOVERY_FSTAB := device/dns/s4503/rootdir/fstab.dns
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/dns/s4503/recovery/recovery-keys.c
+BOARD_CUSTOM_GRAPHICS := ../../../lenovo/armani/recovery/graphics.c
+TARGET_RECOVERY_FSTAB := device/lenovo/armani/rootdir/fstab.qcom
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/lenovo/armani/recovery/recovery-keys.c
 BOARD_UMS_LUNFILE := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
-TARGET_RECOVERY_INITRC := device/dns/s4503/recovery/init.rc
+TARGET_RECOVERY_INITRC := device/lenovo/armani/recovery/init.rc
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888

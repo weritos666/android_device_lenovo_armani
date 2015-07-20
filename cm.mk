@@ -2,17 +2,17 @@
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Boot animation
-TARGET_SCREEN_WIDTH := 940
-TARGET_SCREEN_HEIGHT := 560
+TARGET_SCREEN_WIDTH := 854
+TARGET_SCREEN_HEIGHT := 480
 
 # Release name
-PRODUCT_RELEASE_NAME := S4503
-PRODUCT_NAME := cm_s4503
+PRODUCT_RELEASE_NAME := armani
+PRODUCT_NAME := cm_armani
 
-$(call inherit-product, device/dns/s4503/full_dns.mk)
+$(call inherit-product, device/lenovo/armani/full_armani.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_BRAND=DNS \
-    PRODUCT_NAME=msm8625_i6 \
-    BUILD_PRODUCT=msm8625_i6
+    PRODUCT_BRAND=LENOVO \
+    PRODUCT_NAME=armani \
+    BUILD_PRODUCT=armani
 
