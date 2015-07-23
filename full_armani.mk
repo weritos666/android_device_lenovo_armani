@@ -18,11 +18,11 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from u8833 device
-$(call inherit-product, device/huawei/u8833/u8833.mk)
+$(call inherit-product, device/lenovo/armani/device_armani.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_u8833
-PRODUCT_DEVICE := u8833
-PRODUCT_BRAND := Huawei
-PRODUCT_MANUFACTURER := HUAWEI
-PRODUCT_MODEL := Ascend Y300
+PRODUCT_NAME := full_armani
+PRODUCT_DEVICE := armani
+PRODUCT_BRAND := LENOVO
+PRODUCT_MANUFACTURER := qcom
+PRODUCT_MODEL := A706_ROW
